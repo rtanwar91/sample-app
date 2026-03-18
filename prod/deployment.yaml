@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: production-deployment
+  namespace: prod
 spec:
   replicas: 3
   selector:
@@ -14,6 +15,6 @@ spec:
     spec:
       containers:
       - name: production-container
-        image: <todo>
+        image: us-central1-docker.pkg.dev/PROJECT_ID/my-repository/sample-app:v1.0
         ports:
         - containerPort: 8080
